@@ -1,60 +1,33 @@
 package model;
 
 public class Athlete {
-
     private int id;
-    private String nom;
+    private String name;
     private int age;
-    private double taille; // en mètres
-    private double poids;  // en kg
+    private double height;
+    private double weight;
     private String sport;
 
-    public Athlete(int id, String nom, int age, double taille, double poids, String sport) {
+    public Athlete(int id, String name, int age, double height, double weight, String sport) {
         this.id = id;
-        this.nom = nom;
+        this.name = name;
         this.age = age;
-        this.taille = taille;
-        this.poids = poids;
+        this.height = height;
+        this.weight = weight;
         this.sport = sport;
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public int getAge() { return age; }
+    public double getHeight() { return height; }
+    public double getWeight() { return weight; }
+    public String getSport() { return sport; }
 
-    public String getNom() {
-        return nom;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public double getTaille() {
-        return taille;
-    }
-
-    public double getPoids() {
-        return poids;
-    }
-
-    public void setPoids(double poids) {
-        this.poids = poids;
-    }
-
-    public String getSport() {
-        return sport;
-    }
-
-    @Override
-    public String toString() {
-        return "Athlete{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", age=" + age +
-                ", taille=" + taille +
-                ", poids=" + poids +
-                ", sport='" + sport + '\'' +
-                '}';
-    }
+    public void setId(int id) { this.id = id; }
+    public void setName(String name) { this.name = name; }
+    public void setAge(int age) { this.age = age; }
+    public void setHeight(double height) { this.height = height; }
+    public void setWeight(double weight) { this.weight = weight; }
+    public void setSport(String sport) { this.sport = sport; }
 }
