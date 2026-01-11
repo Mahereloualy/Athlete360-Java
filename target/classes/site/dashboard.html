@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Athlete360 | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="app.js?v=6"></script>
+</head>
+
+<body data-page="dashboard">
+
+    <nav class="sidebar">
+        <div class="brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            Athlete360
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-item active">Dashboard</a>
+            <a href="athletes.html" class="nav-item">Athletes</a>
+            <a href="recommendations.html" class="nav-item">Recommendations</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <h1>Overview</h1>
+
+        <div class="grid">
+            <div class="card stat-card">
+                <h3>Total Athletes</h3>
+                <p id="totalAthletes">—</p>
+            </div>
+            <div class="card stat-card">
+                <h3>Average IMC</h3>
+                <p id="avgImc">—</p>
+            </div>
+            <div class="card stat-card">
+                <h3>Average Weight</h3>
+                <p id="avgWeight">—</p>
+            </div>
+            <div class="card stat-card">
+                <h3>Average Age</h3>
+                <p id="avgAge">—</p>
+            </div>
+        </div>
+
+        <div class="grid" style="grid-template-columns: 2fr 1fr;">
+            <div class="card">
+                <h3>Weight Trend (Last 5 Days)</h3>
+                <div class="chart-container">
+                    <canvas id="weightChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Sport Distribution</h3>
+                <div class="chart-container">
+                    <canvas id="sportChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="card">
+                <h3>Age Distribution</h3>
+                <div class="chart-container">
+                    <canvas id="ageChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>BMI Categories</h3>
+                <div class="chart-container">
+                    <canvas id="bmiChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

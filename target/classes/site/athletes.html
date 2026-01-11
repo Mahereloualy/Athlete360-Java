@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Athlete360 | Athletes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js?v=6" defer></script>
+</head>
+
+<body>
+
+    <nav class="sidebar">
+        <div class="brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            Athlete360
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="athletes.html" class="nav-item active">Athletes</a>
+            <a href="recommendations.html" class="nav-item">Recommendations</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <h1>Manage Athletes</h1>
+
+        <div class="grid" style="grid-template-columns: 2fr 1fr;">
+            <!-- Table Section -->
+            <div class="card">
+                <div class="table-controls">
+                    <h3 style="margin: 0;">Athletes List</h3>
+                    <div class="filters">
+                        <input type="text" id="searchBox" placeholder="🔍 Search..." oninput="applyFilters()">
+                        <select id="sportFilter" onchange="applyFilters()">
+                            <option value="">All Sports</option>
+                            <option value="Football">Football</option>
+                            <option value="Basket">Basket</option>
+                            <option value="Fitness">Fitness</option>
+                            <option value="Running">Running</option>
+                            <option value="Tennis">Tennis</option>
+                        </select>
+                        <select id="limitFilter" onchange="applyFilters()">
+                            <option value="10">Show 10</option>
+                            <option value="25">Show 25</option>
+                            <option value="50">Show 50</option>
+                            <option value="0">Show All</option>
+                        </select>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Athlete</th>
+                            <th>Age</th>
+                            <th>Height</th>
+                            <th>Weight</th>
+                            <th>Sport</th>
+                            <th>IMC</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="athletesTable">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+                <div class="pagination" id="pagination">
+                    <!-- Pagination controls -->
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="card">
+                <h3>Add New Athlete</h3>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" placeholder="John Doe">
+                </div>
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0;">
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" id="age" placeholder="25">
+                    </div>
+                    <div class="form-group">
+                        <label>Height (m)</label>
+                        <input type="number" id="height" step="0.01" placeholder="1.80">
+                    </div>
+                </div>
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0;">
+                    <div class="form-group">
+                        <label>Weight (kg)</label>
+                        <input type="number" id="weight" step="0.1" placeholder="75">
+                    </div>
+                    <div class="form-group">
+                        <label>Sport</label>
+                        <select id="sport">
+                            <option value="Football">Football</option>
+                            <option value="Basket">Basket</option>
+                            <option value="Fitness">Fitness</option>
+                            <option value="Running">Running</option>
+                            <option value="Tennis">Tennis</option>
+                        </select>
+                    </div>
+                </div>
+                <button onclick="addAthlete()">Add Athlete</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadAthletes();
+        });
+    </script>
+</body>
+
+</html>

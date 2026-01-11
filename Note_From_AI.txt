@@ -1,0 +1,9 @@
+Hello!
+If you can see this file, you are looking at the correct folder where I made the changes.
+
+I have:
+1. Added Gson to pom.xml
+2. Fixed the Dashboard
+3. Added the Donut Chart
+
+Please right-click the project in IntelliJ and choose "Reload from Disk" or "Sync with File System".

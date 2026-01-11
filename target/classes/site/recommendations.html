@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Athlete360 | Recommendations</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js?v=4" defer></script>
+</head>
+
+<body>
+
+    <nav class="sidebar">
+        <div class="brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            Athlete360
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="athletes.html" class="nav-item">Athletes</a>
+            <a href="recommendations.html" class="nav-item active">Recommendations</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <h1>AI Recommendations</h1>
+        <div id="recs" class="grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
+            <!-- Cards injected by JS -->
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadRecommendations();
+        });
+    </script>
+</body>
+
+</html>
